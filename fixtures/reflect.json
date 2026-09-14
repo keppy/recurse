@@ -1,0 +1,9 @@
+{
+ "caption": "The sheet records four stations along the prescribed coast, a compass, and eleven soundings dropped where nobody asked for depth; the lead came back wet every time and the register has no line for that. The one bearing it managed to fix is twelve degrees down, and in the margin someone has written that the crumb is still listed.",
+ "alt": "A survey sheet on vellum: a hatched green coastline crosses the page, with four numbered stations, dashed sounding lines dropping into a dotted sea, a compass rose with a cobalt bearing arrow, a small hexagonal cheese in the corner, the word DESERVED struck through, and the caption NO BOTTOM FOUND.",
+ "motifs_seen": ["DESERVED (struck)", "the crumb, 0.4 g", "curd retained", "head inclining", "the Hag's course of reading", "the lead line"],
+ "new_motifs": [{"name": "the lead line", "note": "a weighted sounding line dropped to find bottom; came back wet, no bottom found (XVII)"}],
+ "resolved": ["the Hag's course of reading"],
+ "open_lines": ["no bottom found — how deep is the receiving surface", "head: 12° down — the bearing is a body", "the lead came back wet"],
+ "flaws": []
+}
