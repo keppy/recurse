@@ -55,6 +55,16 @@ def _client():
     return anthropic.Anthropic()
 
 
+def _text(r) -> str:
+    """Join the text blocks of a response. Current models return a thinking block first, so never index content[0]."""
+    if r.stop_reason == "refusal":
+        raise RuntimeError(f"model refused: {getattr(r.stop_details, 'explanation', None)}")
+    text = "".join(b.text for b in r.content if b.type == "text").strip()
+    if not text:
+        raise RuntimeError(f"no text in response (stop_reason={r.stop_reason}); if max_tokens, raise it")
+    return text
+
+
 def _json_from(text):
     text = re.sub(r"```(?:json)?", "", text).strip()
     return json.loads(text[text.index("{"): text.rindex("}") + 1])
@@ -94,8 +104,8 @@ Return ONLY JSON:
  "second_hand": ["2-4 short cobalt annotations, ≤ 4 words each"],
  "story_beat": "one sentence, for memory only: what happens in the story here"
 }}"""
-    r = client.messages.create(model=MODEL, max_tokens=900, messages=[{"role": "user", "content": prompt}])
-    return _json_from(r.content[0].text)
+    r = client.messages.create(model=MODEL, max_tokens=8000, messages=[{"role": "user", "content": prompt}])
+    return _json_from(_text(r))
 
 
 # --------------------------------------------------------------------------- #
@@ -138,14 +148,14 @@ Keep all text inside the page. Return ONLY a python code block."""
     messages = [{"role": "user", "content": prompt}]
     code = ""
     for attempt in range(attempts):
-        r = client.messages.create(model=MODEL, max_tokens=6000, messages=messages)
-        code = _code_from(r.content[0].text)
+        r = client.messages.create(model=MODEL, max_tokens=16000, messages=messages)
+        code = _code_from(_text(r))
         try:
             render(code, plan_, out_png, seed)
             return code
         except Exception:
             tb = traceback.format_exc(limit=4)
-            messages += [{"role": "assistant", "content": r.content[0].text},
+            messages += [{"role": "assistant", "content": r.content},  # echo the full blocks (thinking included)
                          {"role": "user", "content": f"That raised:\n{tb}\nFix it and return the full corrected code block only."}]
     raise RuntimeError(f"drawing code failed after {attempts} attempts; last error above")
 
@@ -169,10 +179,10 @@ Return ONLY JSON:
  "open_lines": ["1-3 phrases from this image the next entry will have to answer"],
  "flaws": ["anything drawn badly the next hand should avoid; empty list if none"]
 }}"""
-    r = client.messages.create(model=MODEL, max_tokens=1200, messages=[{"role": "user", "content": [
+    r = client.messages.create(model=MODEL, max_tokens=8000, messages=[{"role": "user", "content": [
         {"type": "image", "source": {"type": "base64", "media_type": "image/png", "data": b64}},
         {"type": "text", "text": prompt}]}])
-    return _json_from(r.content[0].text)
+    return _json_from(_text(r))
 
 
 # --------------------------------------------------------------------------- #
