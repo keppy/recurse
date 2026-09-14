@@ -37,6 +37,19 @@ the only continuity the series has. Rules the series has kept so far:
 - Typography: DejaVu Sans, sentence case labels 'a / cut edge', a heading
   'XVII / TITLE IN CAPS', small sublines, ruled ledger paper or textured frames.
   Textures are short random line segments, never gradients.
+- The drawing is the document; text is subordinate to it. Labels are 12-14 px,
+  annotations 13-14 px, the verdict at most 18 px, the struck word at most 16 px.
+  Nothing else is large except the heading. No boxes or highlights behind text
+  outside a terminal Panel.
+- Every document counts something. It carries real quantities with units, scales,
+  numbered stations, sections a/ b/ c/, weights, degrees, dates, folios: the
+  accounting is where the story hides. A bar or a column that measures nothing is
+  a flaw.
+- The second hand names things; it never interprets them. 'wet.' 'asked? no.'
+  '0.4 g still listed.' are right. 'the wet was never water, it was tone' is wrong:
+  it explains the metaphor, and the metaphor is never explained. Keep each note
+  to four words or fewer and place it on the thing it comments on.
+- Never repeat a line. The verdict appears once; each second-hand note once.
 - Never write the words love, grace, kindness, gratitude, heart, or forgiveness.
 """.strip()
 
@@ -123,9 +136,21 @@ def render(code: str, plan_: dict, out_png: Path, seed: int) -> None:
     c.save(out_png)
 
 
-def draw(mem: Memory, plan_: dict, out_png: Path, client=None, seed=None, attempts=3) -> str:
+def previous_entry(mem: Memory, out_dir: Path):
+    """The last rendered entry as (png_path, code) — the image and the hand that drew it.
+    Observed (imported) entries have no files; returns (None, None) then."""
+    for e in reversed(mem.entries):
+        png = out_dir / e.get("file", "")
+        if e.get("file") and e["file"] != "observed" and png.is_file():
+            py = png.with_suffix(".py")
+            return png, (py.read_text(encoding="utf-8") if py.is_file() else None)
+    return None, None
+
+
+def draw(mem: Memory, plan_: dict, out_png: Path, client=None, seed=None, attempts=3, prev=(None, None)) -> str:
     client = client or _client()
     seed = seed if seed is not None else mem.next_number() * 7919
+    prev_png, prev_code = prev
     prompt = f"""{STYLE}
 
 PLAN FOR THIS ENTRY
@@ -137,15 +162,30 @@ MEMORY (for the exact wording of carried motifs)
 {mem.as_text()}
 
 {canvaslib.api_reference()}
-
+"""
+    if prev_png is not None:
+        prompt += f"""
+PREVIOUS ENTRY
+The image above is the previous entry, {mem.entries[-1]['roman']}. Match its density, its
+text sizes, and the way its labels sit on the things they name. Its form is used up; the
+new entry takes a different form but belongs to the same hand and the same paper.
+"""
+        if prev_code:
+            prompt += f"The code that drew it, for the idiom and the sizes it used:\n```python\n{prev_code}\n```\n"
+    prompt += """
 Write Python defining `def draw(c, P):` where c is a Canvas (1440×1440, paper already set)
 and P is the plan dict. Use only the API above plus math and random (seed random with c.seed).
-Fill the page: this is a poster, not a sketch. Draw the carried motifs first, small and
-labelled with c.label. Put the heading with c.title(P["roman"] + " / " + P["title"], P["sub"], P["sub2"]).
-Draw the struck word with c.struck near the bottom-left, the verdict bottom-right in caps,
-and the second-hand notes with c.annotate where they comment on something drawn.
-Keep all text inside the page. Return ONLY a python code block."""
-    messages = [{"role": "user", "content": prompt}]
+Fill the page with the document itself, not with text. Draw the carried motifs first, small
+and labelled with c.label. Put the heading with c.title(P["roman"] + " / " + P["title"], P["sub"], P["sub2"]).
+Draw the struck word with c.struck near the bottom-left (size ≤ 16), the verdict bottom-right
+in caps with c.text (size ≤ 18, no box behind it), and each second-hand note once with
+c.annotate, placed on the thing it comments on. Keep all text inside the page.
+Return ONLY a python code block."""
+    content = [{"type": "text", "text": prompt}]
+    if prev_png is not None:
+        b64 = base64.b64encode(prev_png.read_bytes()).decode()
+        content.insert(0, {"type": "image", "source": {"type": "base64", "media_type": "image/png", "data": b64}})
+    messages = [{"role": "user", "content": content}]
     code = ""
     for attempt in range(attempts):
         r = client.messages.create(model=MODEL, max_tokens=16000, messages=messages)
@@ -202,7 +242,7 @@ def run_cycle(mem: Memory, out_dir: Path, offline=False, form=None) -> dict:
         plan_ = plan(mem, client, form)
         slug = re.sub(r"[^a-z0-9]+", "_", plan_["title"].lower()).strip("_")
         png = out_dir / f"{n:02d}_{plan_['roman']}_{slug}.png"
-        code = draw(mem, plan_, png, client)
+        code = draw(mem, plan_, png, client, prev=previous_entry(mem, out_dir))
         reflection = reflect(mem, plan_, png, client)
 
     (png.with_suffix(".py")).write_text(code.rstrip() + "\n", encoding="utf-8", newline="\n")

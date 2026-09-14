@@ -25,6 +25,10 @@ python recurse.py api                # the canvas API the model is handed
 - `--offline` re-renders the XVII fixture as the next entry number and appends it to `memory.json`.
   Use `--memory` / `--out` to point at scratch copies if you only want to smoke-test the pipeline.
 
+## Starting your own series
+
+See [SEEDING.md](SEEDING.md): what each field of `memory.json` is for, what the code does with it, and how to write the story kernel, the two voices, the seed motifs, the open lines, and the palette.
+
 ## Pieces
 
 - `memory.json` — the store. Motifs with states (open / carried / resolved), open
@@ -34,7 +38,7 @@ python recurse.py api                # the canvas API the model is handed
   short-segment hatch clipped to polygons, blobs, textured bands and frames,
   struck text, cobalt annotations, a monospace `Panel` for the terminal-ledger form.
   `api_reference()` renders its own docstrings into the prompt.
-- `lib/agent.py` — three model calls per cycle (plan → draw → reflect). Drawing
+- `lib/agent.py` — three model calls per cycle (plan → draw → reflect). The draw step is shown the previous entry's PNG and code. Drawing
   code that raises is sent back with the traceback, up to 3 attempts. The reflect
   step sees the PNG, so continuity is over images, not intentions.
 - `fixtures/` — a hand-written stand-in cycle (XVII, a survey sheet) for `--offline`.
