@@ -255,6 +255,6 @@ def run_cycle(mem: Memory, out_dir: Path, offline=False, form=None) -> dict:
     (png.with_suffix(".py")).write_text(code.rstrip() + "\n", encoding="utf-8", newline="\n")
     (png.with_suffix(".md")).write_text(
         f"# {plan_['roman']} / {plan_['title']}\n\n{reflection['caption']}\n\n**alt:** {reflection['alt']}\n\n"
-        f"form: {plan_['form']} · trade: {plan_.get('trade','')}\n", encoding="utf-8")
+        f"form: {plan_['form']} · trade: {plan_.get('trade','')}\n", encoding="utf-8", newline="\n")
     mem.record(plan_, reflection, png.name)
     return {"png": str(png), "caption": reflection["caption"], "alt": reflection["alt"], "plan": plan_}
