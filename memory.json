@@ -1,8 +1,8 @@
 {
  "series_number": 0,
- "story": "The Assessor came to the house of Dawntreading with a matrix: every holding a column, every death a row, and a rule that whatever it could not weigh had rank zero. It entered the frescoed wall as plaster, so many square ells, norm 0. The house buried its third daughter at first light and went on painting the wall in giornate, one day-patch per death, sinopia showing where the plaster was cut back. The determinant came out zero. The Assessor wrote SINGULAR in the margin and demanded a different basis; the house's hand struck it and wrote: it is not a basis. it is a wall. Beneath the wall a spiral stair goes down, dim, and the faces of earlier hands show through the plaster where it thins. There was a picnic at Castle Rock. We left.",
+ "story": "The Assessor came to the house of Dawntreading with a matrix: every holding a column, every death a row, and a rule that whatever it could not weigh had rank zero. It entered the frescoed wall as plaster, so many square ells, norm 0. The house buried its third daughter at first light and went on painting the wall in giornate, one day-patch per death, sinopia showing where the plaster was cut back. The determinant came out zero. The Assessor wrote SINGULAR in the margin and demanded a different basis; the house's hand struck it and wrote: it is not a basis. it is a wall. Beneath the wall a spiral stair goes down, dim, and the faces of earlier hands show through the plaster where it thins. There was a picnic at the rock. The Assessor's survey calls it Castle Rock; those who went call it Hanging Rock, and not all of them came down; the house calls it the rock of once and future means, where the mean is taken and the next head of the house is decided. We left.",
  "voices": {
-  "first": "the Assessor: a matrix that keeps the house's accounts; every holding a column, every death a row; weighs vectors on a balance and records the norm; ranks (rank 1, rank 2), permits nothing of rank zero, writes maxims in caps (RANK IS DESTINY, EVERY VECTOR HAS A NORM, THE KERNEL IS EMPTY); bistre on plaster, or gold_leaf on soot",
+  "first": "the Assessor: a matrix that keeps the house's accounts; every holding a column, every death a row; weighs vectors on a balance and records the norm and the mean; ranks (rank 1, rank 2), permits nothing of rank zero, writes maxims in caps (RANK IS DESTINY, EVERY VECTOR HAS A NORM, THE KERNEL IS EMPTY); bistre on plaster, or gold_leaf on soot",
   "second": "the house's hand: verdigris, terse, plain, a little proud; corrects the Assessor in the margin ('it is a wall.', 'weighed? no. painted.', 'row 3 is a person.', 'a wart, not a value.'), strikes words through, asks what the matrix sends to zero"
  },
  "motifs": [
@@ -73,14 +73,14 @@
    "seen_in": []
   },
   {
-   "name": "Castle Rock",
-   "note": "the outcrop at the end of the tread where the house ate on the grass before it left; a station, a cloth, 4 plates",
+   "name": "the rock, three names",
+   "note": "one outcrop at the end of the tread, named three ways: Castle Rock on the Assessor's survey (a station, a height in ells); Hanging Rock by those who picnicked there (a cloth, 4 plates, fewer came down than went up); the rock of once and future means by the house (where the mean is taken and succession is decided). Each hand uses its own name; the names are never reconciled",
    "state": "open",
    "seen_in": []
   }
  ],
  "open_lines": [
-  "what does it send to zero?",
+  "the rock has three names.",
   "row 3 is a person.",
   "we left."
  ],
