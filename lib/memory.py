@@ -24,6 +24,15 @@ def roman(n):
     return s
 
 
+def _names(x) -> list:
+    """Coerce a model-returned field to a list of strings. A bare string would otherwise iterate as characters."""
+    if x is None:
+        return []
+    if isinstance(x, str):
+        return [x] if x.strip() else []
+    return [str(i) for i in x if isinstance(i, (str, int, float)) and str(i).strip()]
+
+
 class Memory:
     def __init__(self, path: Path):
         self.path = Path(path)
@@ -58,19 +67,21 @@ class Memory:
     def record(self, plan_, reflection, filename):
         n = self.next_number(); r = plan_["roman"]
         byname = {m["name"]: m for m in self.motifs}
-        for name in reflection.get("motifs_seen", []) + plan_.get("carry", []):
+        for name in _names(reflection.get("motifs_seen")) + _names(plan_.get("carry")):
             if name in byname:
                 m = byname[name]; m["state"] = "carried" if m["state"] != "resolved" else m["state"]
                 if r not in m["seen_in"]: m["seen_in"].append(r)
-        for name in reflection.get("resolved", []) + plan_.get("resolve", []):
+        for name in _names(reflection.get("resolved")) + _names(plan_.get("resolve")):
             if name in byname: byname[name]["state"] = "resolved"
-        for nm in reflection.get("new_motifs", []):
+        for nm in reflection.get("new_motifs") or []:
+            if not isinstance(nm, dict) or not str(nm.get("name", "")).strip():
+                continue
             if nm["name"] not in byname:
                 self.motifs.append({"name": nm["name"], "note": nm["note"], "state": "open", "seen_in": [r]})
-        for name in plan_.get("introduce", []):
+        for name in _names(plan_.get("introduce")):
             if name not in {m["name"] for m in self.motifs}:
                 self.motifs.append({"name": name, "note": "introduced in " + r, "state": "open", "seen_in": [r]})
-        self.data["open_lines"] = reflection.get("open_lines", [])[:3]
+        self.data["open_lines"] = _names(reflection.get("open_lines"))[:3]
         if plan_.get("trade") and plan_["trade"] not in self.data["vocabulary"]:
             self.data["vocabulary"].append(plan_["trade"])
         self.data["story"] = (self.data["story"] + " " + plan_.get("story_beat", "")).strip()[-1200:]

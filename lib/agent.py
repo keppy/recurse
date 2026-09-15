@@ -46,11 +46,16 @@ the only continuity the series has. Rules the series has kept so far:
   numbered stations, sections a/ b/ c/, weights, degrees, dates, folios: the
   accounting is where the story hides. A bar or a column that measures nothing is
   a flaw.
-- The second hand names things; it never interprets them. 'wet.' 'asked? no.'
-  '0.4 g still listed.' are right. 'the wet was never water, it was tone' is wrong:
-  it explains the metaphor, and the metaphor is never explained. Keep each note
-  to four words or fewer and place it on the thing it comments on.
+- The second hand names things; it never interprets them. 'it is a wall.'
+  'weighed? no. painted.' '4 plates. 3 down.' are right. 'the wall was never plaster,
+  it was memory' is wrong: it explains the metaphor, and the metaphor is never
+  explained. Keep each note to four words or fewer and place it on the thing it
+  comments on.
 - Never repeat a line. The verdict appears once; each second-hand note once.
+- The document fills the page. An inventory runs twenty lines or more, a matrix has
+  eight or more rows and columns, a wall a dozen giornate, a route a dozen stations.
+  Ruled paper left empty below a short document is a flaw; so is a page that is
+  mostly margin. Dense, small, and complete, like a real register.
 - Never write the words death, dead, dying, grief, mourning, art, beauty, soul, or eternal.
   The dead are rows with names and dates; the wall is plaster and pigment by the ell.
 """.strip()
@@ -111,9 +116,9 @@ Return ONLY JSON:
  "sub2": "palette names separated by slashes, from the canvas PALETTE",
  "form": "one key from the forms above",
  "trade": "the trade whose vocabulary this document uses",
- "carry": ["motif names from memory that must appear, 2-4"],
- "resolve": ["motif names (or open lines) this piece answers, 0-2"],
- "introduce": ["one new object or word the series will have to carry from now on"],
+ "carry": ["motif names from memory that must appear, 2-4 (a JSON list)"],
+ "resolve": ["motif names (or open lines) this piece answers, 0-2 (a JSON list)"],
+ "introduce": ["one new object or word the series will have to carry from now on (a JSON list of one)"],
  "struck": "one word or phrase to draw struck-through, or null",
  "verdict": "the first voice's line for the bottom-right, ≤ 5 words",
  "second_hand": ["2-4 short verdigris annotations, ≤ 4 words each"],
