@@ -1,6 +1,6 @@
 {
- "series_number": 1,
- "story": "The Assessor came to the house of Dawntreading with a matrix: every holding a column, every death a row; whatever it could not weigh had rank zero. It entered the frescoed wall as plaster by the ell, norm 0. The house buried its third daughter at first light and went on painting the wall in giornate, one day-patch per death, sinopia showing where plaster was cut back. The determinant came out zero. The Assessor wrote SINGULAR; the house's hand struck it: it is not a basis. it is a wall. Beneath the wall a spiral stair goes down, dim, faces of earlier hands showing through the plaster. The house moves its rocks on spiral spindles. There was a picnic at the rock, which the survey calls Castle Rock, the picnickers Hanging Rock, and the house the rock of once and future means, where the mean is taken and succession decided. We played the cardamom game on the cloth and it consumed us. Not all came down. We left. After the wall, the house descends to the rock of three names, plays the cardamom game until the pods and the count of who came down are all that's left, and the Assessor's inventory tallies seven up, six down, the seventh's name struck under 'returned'.",
+ "series_number": 4,
+ "story": "f once and future means, where the mean is taken and succession decided. We played the cardamom game on the cloth and it consumed us. Not all came down. We left. After the wall, the house descends to the rock of three names, plays the cardamom game until the pods and the count of who came down are all that's left, and the Assessor's inventory tallies seven up, six down, the seventh's name struck under 'returned'. The Assessor tabulates the six who came down as row vectors — pods, turns, gold leaf, and an unopened basket — weighs each on the balance of norms, and calls the basket's column rank zero; the house's hand strikes RANK ZERO and notes the basket was never opened, not sent to nothing. The dawn tread descends past the spiral stair to a tenth station where the unopened basket is finally opened, its weight unchanged, and at the twelfth, unmarked station the Assessor's kernel is found to hold something after all, while row seven stays struck. The wall's twelfth giornata, left bare after the tread, is finally painted: beneath its sinopia the kernel's contents surface as a face among the joins, while row seven stays struck and the Assessor's 'EMPTY' is struck from its own verdict.",
  "voices": {
   "first": "the Assessor: a matrix that keeps the house's accounts; every holding a column, every death a row; weighs vectors on a balance and records the norm and the mean; ranks (rank 1, rank 2), permits nothing of rank zero, writes maxims in caps (RANK IS DESTINY, EVERY VECTOR HAS A NORM, THE KERNEL IS EMPTY); bistre on plaster, or gold_leaf on soot",
   "second": "the house's hand: verdigris, terse, plain, a little proud; corrects the Assessor in the margin ('it is a wall.', 'weighed? no. painted.', 'row 3 is a person.', 'a wart, not a value.'), strikes words through, asks what the matrix sends to zero"
@@ -27,16 +27,20 @@
   {
    "name": "the balance of norms",
    "note": "the Assessor's scale: one pan for the vector, one for the weights; reads ‖v‖; the wall weighed 0",
-   "state": "carried",
+   "state": "resolved",
    "seen_in": [
-    "I"
+    "I",
+    "II"
    ]
   },
   {
    "name": "the kernel",
    "note": "the null space: everything the matrix sends to zero; the house lives there; drawn as the blank the columns cannot reach",
-   "state": "open",
-   "seen_in": []
+   "state": "carried",
+   "seen_in": [
+    "III",
+    "IV"
+   ]
   },
   {
    "name": "the dawn tread",
@@ -61,14 +65,20 @@
    "note": "the only holding the matrix could weigh: 1 square of gold leaf, 0.03 g, rank 1; listed above the wall",
    "state": "carried",
    "seen_in": [
-    "I"
+    "I",
+    "II",
+    "III",
+    "IV"
    ]
   },
   {
    "name": "the spiral stair",
    "note": "goes down beneath the wall; dim; each turn shows a face from an earlier layer of plaster; the stair is itself a spindle; the Assessor has no column for it",
-   "state": "open",
-   "seen_in": []
+   "state": "carried",
+   "seen_in": [
+    "III",
+    "IV"
+   ]
   },
   {
    "name": "faces in the plaster",
@@ -95,7 +105,8 @@
    "note": "played on the picnic cloth with green pods as counters; a captured pod is split and its seeds eaten, about 14 seeds to a pod, 0.1 g; the Assessor enters pods by count and weight; the house counts turns; it consumed us",
    "state": "carried",
    "seen_in": [
-    "I"
+    "I",
+    "II"
    ]
   },
   {
@@ -103,17 +114,47 @@
    "note": "table of seven hands with pods, weight, turns, and status, seventh struck through",
    "state": "carried",
    "seen_in": [
-    "I"
+    "I",
+    "II",
+    "III"
+   ]
+  },
+  {
+   "name": "the basket, unopened",
+   "note": "a woven gold-leaf basket icon, introduced as the column that never varies",
+   "state": "resolved",
+   "seen_in": [
+    "II",
+    "III"
+   ]
+  },
+  {
+   "name": "the twelfth station, unmarked",
+   "note": "final station on the route, omitted from the survey plate, kernel recorded anyway",
+   "state": "resolved",
+   "seen_in": [
+    "III"
+   ]
+  },
+  {
+   "name": "the arriccio scar",
+   "note": "a diagonal cut line crossing all twelve giornate, marking where old plaster met new",
+   "state": "open",
+   "seen_in": [
+    "IV"
    ]
   }
  ],
  "open_lines": [
-  "six came down.",
-  "the balance of norms",
-  "basket left untouched."
+  "row seven still struck",
+  "the arriccio scar's far end, off the page",
+  "why the kernel held a face"
  ],
  "vocabulary": [
-  "probate inventory"
+  "probate inventory",
+  "linear algebra",
+  "surveying",
+  "fresco painting"
  ],
  "entries": [
   {
@@ -127,6 +168,45 @@
    "flaws": [
     "the top-left quadrant and the band below the tally were left empty; the tables sat in opposite corners",
     "the form asked for faint ruled lines across the page and none were drawn"
+   ]
+  },
+  {
+   "n": 2,
+   "roman": "II",
+   "title": "THE BASKET COLUMN",
+   "form": "assessment_matrix",
+   "file": "02_II_the_basket_column.png",
+   "caption": "I tabulate six hands who came down—day, pods, turns, gold leaf, a basket left unopened—and weigh each against the balance of norms as a length, ‖v‖. I have no column for what the basket holds, only that its texture never changes and its determinant sums to zero; the margin says the kernel is empty.",
+   "beat": "The Assessor tabulates the six who came down as row vectors — pods, turns, gold leaf, and an unopened basket — weighs each on the balance of norms, and calls the basket's column rank zero; the house's hand strikes RANK ZERO and notes the basket was never opened, not sent to nothing.",
+   "flaws": [
+    "second-hand notes overlap the basket header and each other, unreadable",
+    "row 7 and det line crowd together at bottom of table"
+   ]
+  },
+  {
+   "n": 3,
+   "roman": "III",
+   "title": "THE TWELFTH STATION",
+   "form": "tread_route",
+   "file": "03_III_the_twelfth_station.png",
+   "caption": "I recorded twelve paces and one stair, ells dropping from minus one to minus fifteen, the basket opened at pace ten with its weight unchanged, and row seven still struck on the tally of returns. There is no column for the unmarked twelfth station, only a kernel vector answering ker(A) ≠ {0} against my own verdict—the margin says kernel: not empty.",
+   "beat": "The dawn tread descends past the spiral stair to a tenth station where the unopened basket is finally opened, its weight unchanged, and at the twelfth, unmarked station the Assessor's kernel is found to hold something after all, while row seven stays struck.",
+   "flaws": [
+    "connecting lines between stations cross so densely several pace labels are obscured",
+    "the printed verdict 'THE KERNEL IS EMPTY' sits unresolved against the kernel panel's contradicting equation"
+   ]
+  },
+  {
+   "n": 4,
+   "roman": "IV",
+   "title": "THE BARE GIORNATA",
+   "form": "giornate_wall",
+   "file": "04_IV_the_bare_giornata.png",
+   "caption": "I keep twelve giornate, each dated by row and column, each join ruled and textured, each patch of plaster accounted for from arriccio to gold leaf. I have no column for what the sinopia uncovers once the twelfth is finally painted, no line for a face where I expected only pigment, and the margin only says rank of the finished wall: one.",
+   "beat": "The wall's twelfth giornata, left bare after the tread, is finally painted: beneath its sinopia the kernel's contents surface as a face among the joins, while row seven stays struck and the Assessor's 'EMPTY' is struck from its own verdict.",
+   "flaws": [
+    "row/col labels rendered too faint to read against the plaster texture",
+    "annotation text crowds and overlaps the diagonal scar near giornata 07"
    ]
   }
  ]
