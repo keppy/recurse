@@ -1,229 +1,71 @@
 {
- "series_number": 17,
- "story": "A ledger (the instrument) kept accounts of sure promotion and Number One and withheld permission to open, five times; a leaf turned toward it and opened anyway. A man gave goats' cheese, all he had, on one platter; the ledger struck 'deserved' because he never asked, and had to list the crumb (0.4 g) above everything. His head was already inclining before the first voice knew what to say. In XIV the cut edge became a platter with a raised lip and the receiving sheet learned to hold a little weight. In XVI everything came attached: fruiting organ, flesh and seed given together, one act of transfer, no separate verdicts. 'Because he has it.' DESERVED remains struck. The prescribed route is redrawn as a coast with four stations; soundings dropped beside it find no bottom, and the bearing the instrument records is the angle of the inclining head.",
+ "series_number": 0,
+ "story": "The Assessor came to the house of Dawntreading with a matrix: every holding a column, every death a row, and a rule that whatever it could not weigh had rank zero. It entered the frescoed wall as plaster, so many square ells, norm 0. The house buried its third daughter at first light and went on painting the wall in giornate, one day-patch per death, sinopia showing where the plaster was cut back. The determinant came out zero. The Assessor wrote SINGULAR in the margin and demanded a different basis; the house's hand struck it and wrote: it is not a basis. it is a wall.",
  "voices": {
-  "first": "the instrument: bureaucratic, keeps registers and permits, ranks (№1 №2 №3), checks boxes, writes maxims in caps (TAKE CARE OF NUMBER ONE), withholds permission unless improvement is promised; ink on vellum or umber on black",
-  "second": "2nd hand: cobalt, terse, plain, a little tender; corrects the first voice in the margin ('it opened without you.', 'who writes this?', 'asked? no.'), strikes words through, asks questions the first voice cannot answer"
+  "first": "the Assessor: a matrix that keeps the house's accounts; every holding a column, every death a row; weighs vectors on a balance and records the norm; ranks (rank 1, rank 2), permits nothing of rank zero, writes maxims in caps (RANK IS DESTINY, EVERY VECTOR HAS A NORM, THE KERNEL IS EMPTY); bistre on plaster, or gold_leaf on soot",
+  "second": "the house's hand: verdigris, terse, plain, a little proud; corrects the Assessor in the margin ('it is a wall.', 'weighed? no. painted.', 'row 3 is a person.', 'a wart, not a value.'), strikes words through, asks what the matrix sends to zero"
  },
  "motifs": [
   {
-   "name": "PERMISSION WITHHELD",
-   "note": "the highlighted verdict; permit openings only if improvement promised; withheld five times",
-   "state": "carried",
-   "seen_in": [
-    "ledger",
-    "route"
-   ]
-  },
-  {
-   "name": "leaf turning / opening",
-   "note": "recto, fold, verso, hinge → open; a page and a plant leaf; yield register openings 1–5, gain –; it opened anyway",
-   "state": "carried",
-   "seen_in": [
-    "ledger"
-   ]
-  },
-  {
-   "name": "foul bite / clean margin",
-   "note": "intaglio terms: the plate etched where it shouldn't be vs the margin kept clean; 'contents exceed the clean bracket'",
-   "state": "carried",
-   "seen_in": [
-    "ledger",
-    "route",
-    "XIV"
-   ]
-  },
-  {
-   "name": "plate tone / plate mark",
-   "note": "the faint ink left on a wiped plate; the embossed edge the plate leaves in the paper",
-   "state": "carried",
-   "seen_in": [
-    "ledger",
-    "route"
-   ]
-  },
-  {
-   "name": "goats' cheese, all he had",
-   "note": "the gift: given, recorded, platter one, weight ≈ all",
-   "state": "carried",
-   "seen_in": [
-    "route",
-    "XIV",
-    "XVI"
-   ]
-  },
-  {
-   "name": "platter",
-   "note": "the plate as serving dish; 'the edge becomes a platter'; ONE PLATTER / ALL AT ONCE",
-   "state": "carried",
-   "seen_in": [
-    "route",
-    "XIV",
-    "XVI"
-   ]
-  },
-  {
-   "name": "DESERVED (struck)",
-   "note": "the ledger's earned column, cancelled in cobalt because he was not asked; stays struck in every entry",
-   "state": "carried",
-   "seen_in": [
-    "route",
-    "XVI",
-    "XVII"
-   ]
-  },
-  {
-   "name": "the crumb, 0.4 g",
-   "note": "'mattered most: the crumb, not the count · listed above everything'",
-   "state": "carried",
-   "seen_in": [
-    "route",
-    "XVII"
-   ]
-  },
-  {
-   "name": "head inclining",
-   "note": "'the head is already inclining before I know what to say'; purple/cobalt diagonals falling off the frame; became a labelled cobalt arrow 'inclination' in XVI",
-   "state": "carried",
-   "seen_in": [
-    "route",
-    "XVI",
-    "XVII"
-   ]
-  },
-  {
-   "name": "curd retained",
-   "note": "the hexagonal cheese block from XIV kept as a small labelled relic in the corner",
-   "state": "carried",
-   "seen_in": [
-    "XIV",
-    "XVI",
-    "XVII"
-   ]
-  },
-  {
-   "name": "receiving surface / sheet",
-   "note": "the paper under the plate; 'the receiving sheet has learned to hold a little weight'",
-   "state": "carried",
-   "seen_in": [
-    "XIV"
-   ]
-  },
-  {
-   "name": "cut edge / raised lip",
-   "note": "sections a/b/c of the vessel; lip thickness scale bar 0–1",
-   "state": "carried",
-   "seen_in": [
-    "XIV"
-   ]
-  },
-  {
-   "name": "star calyx",
-   "note": "small dark five-point star on each fruit where the stem attaches",
+   "name": "SINGULAR (struck)",
+   "note": "the Assessor's verdict on the wall when the determinant came out zero; struck by the house's hand; stays struck in every entry",
    "state": "open",
-   "seen_in": [
-    "XVI"
-   ]
+   "seen_in": []
   },
   {
-   "name": "Because he has it.",
-   "note": "the answer to 'deserved': you give what is attached to you",
+   "name": "the wall, in giornate",
+   "note": "the fresco wall painted one day-patch per death; the joins between giornate show as fine ridges; numbered by day",
    "state": "open",
-   "seen_in": [
-    "XVI"
-   ]
+   "seen_in": []
   },
   {
-   "name": "the Hag's course of reading",
-   "note": "Euclid ► Newton ► Fluxions ► Conics, §1–§4; a prescribed route running downhill past him; never finished",
-   "state": "resolved",
-   "seen_in": [
-    "route",
-    "XVII"
-   ]
-  },
-  {
-   "name": "who writes this?",
-   "note": "the second hand's own question; unanswered",
+   "name": "row 3 / the third daughter",
+   "note": "the matrix's row for her: a name, a date at first light, every entry 0; 'row 3 is a person.'",
    "state": "open",
-   "seen_in": [
-    "ledger"
-   ]
+   "seen_in": []
   },
   {
-   "name": "the lead line",
-   "note": "a weighted sounding line dropped to find bottom; came back wet, no bottom found (XVII)",
+   "name": "the balance of norms",
+   "note": "the Assessor's scale: one pan for the vector, one for the weights; reads ‖v‖; the wall weighed 0",
    "state": "open",
-   "seen_in": [
-    "XVII"
-   ]
+   "seen_in": []
+  },
+  {
+   "name": "the kernel",
+   "note": "the null space: everything the matrix sends to zero; the house lives there; drawn as the blank the columns cannot reach",
+   "state": "open",
+   "seen_in": []
+  },
+  {
+   "name": "the dawn tread",
+   "note": "the house walks the length of the wall at first light carrying the dead out; 12 paces; footprints in wet plaster",
+   "state": "open",
+   "seen_in": []
+  },
+  {
+   "name": "the wart",
+   "note": "an ill-conditioned entry that will not invert; the Assessor logs it as a value, the house's hand calls it a wart; a small blob on the matrix",
+   "state": "open",
+   "seen_in": []
+  },
+  {
+   "name": "sinopia showing",
+   "note": "the red-earth underdrawing that shows where plaster was cut back; what was planned before the day's work",
+   "state": "open",
+   "seen_in": []
+  },
+  {
+   "name": "gold leaf, one square",
+   "note": "the only holding the matrix could weigh: 1 square of gold leaf, 0.03 g, rank 1; listed above the wall",
+   "state": "open",
+   "seen_in": []
   }
  ],
  "open_lines": [
-  "no bottom found — how deep is the receiving surface",
-  "head: 12° down — the bearing is a body",
-  "the lead came back wet"
+  "what does it send to zero?",
+  "row 3 is a person.",
+  "singular. cut the plaster back."
  ],
- "vocabulary": [
-  "intaglio printmaking",
-  "bookbinding",
-  "a mathematician's course of reading",
-  "vessel sections",
-  "botanical plate",
-  "hydrographic survey"
- ],
- "entries": [
-  {
-   "n": 0,
-   "roman": "ledger",
-   "title": "PROMOTION LEDGER",
-   "form": "terminal_ledger",
-   "file": "observed",
-   "caption": "The ledger has a column for sure promotion, a column for pleasant, a column for Number One, and no column at all for a leaf that turned toward me and asked nothing. Permission withheld, five times; in the margin someone else has written that it opened anyway.",
-   "beat": "the instrument keeps accounts; the leaf opens without permission",
-   "flaws": []
-  },
-  {
-   "n": 0,
-   "roman": "route",
-   "title": "COURSE OF READING",
-   "form": "route_diagram",
-   "file": "observed",
-   "caption": "Given: goats' cheese, all he had, recorded. Platter: one. Deserved: not asked, struck, a rule of dashes the route runs past on its way downhill; the crumb is listed above everything and the head is already inclining before I know what to say.",
-   "beat": "the gift is recorded and 'deserved' struck; the head inclines",
-   "flaws": []
-  },
-  {
-   "n": 14,
-   "roman": "XIV",
-   "title": "THE EDGE BECOMES A PLATTER",
-   "form": "plan_view",
-   "file": "observed",
-   "caption": "",
-   "beat": "the plate's edge is rebuilt as a vessel with a raised lip; the receiving sheet learns to hold a little weight",
-   "flaws": [
-    "labels on the right clipped by the frame"
-   ]
-  },
-  {
-   "n": 16,
-   "roman": "XVI",
-   "title": "EVERYTHING ATTACHED",
-   "form": "botanical_plate",
-   "file": "observed",
-   "caption": "",
-   "beat": "fruit, flesh and seed given together in one act of transfer; DESERVED struck; 'Because he has it.'",
-   "flaws": []
-  },
-  {
-   "n": 17,
-   "roman": "XVII",
-   "title": "SOUNDINGS OFF THE PRESCRIBED COAST",
-   "form": "map_sheet",
-   "file": "17_XVII_soundings_off_the_prescribed_coast.png",
-   "caption": "The sheet records four stations along the prescribed coast, a compass, and eleven soundings dropped where nobody asked for depth; the lead came back wet every time and the register has no line for that. The one bearing it managed to fix is twelve degrees down, and in the margin someone has written that the crumb is still listed.",
-   "beat": "The prescribed route is redrawn as a coast with four stations; soundings dropped beside it find no bottom, and the bearing the instrument records is the angle of the inclining head.",
-   "flaws": []
-  }
- ]
+ "vocabulary": [],
+ "entries": []
 }

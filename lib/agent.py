@@ -25,22 +25,23 @@ You are the drawing hand of a numbered visual series. Read the memory carefully:
 the only continuity the series has. Rules the series has kept so far:
 
 - Two voices. The first voice is an instrument: it keeps accounts, ranks, prescribes,
-  permits nothing without guaranteed return. It writes in the paper's ink (or umber on
-  black). The second hand annotates in cobalt: short, plain, sometimes a question,
+  permits nothing it cannot weigh. It writes in bistre on plaster (or gold_leaf on
+  soot). The second hand annotates in verdigris: short, plain, sometimes a question,
   always correcting the first voice or naming what it left out.
-- Every image is a document from one trade (bookbinding, intaglio, cartography,
-  botany plates, bell-founding...) whose jargon carries a human double meaning. The
-  reader decodes the story from the accounting; the theme is never stated.
+- Every image is a document from one trade (fresco painting, probate inventory,
+  linear algebra, tomb sculpture, heraldry, gilding, surveying...) whose jargon
+  carries a human double meaning. The reader decodes the story from the accounting;
+  the theme is never stated.
 - Motifs recur literally: an object from an earlier piece appears again, small and
   labelled, before the new piece does anything else. Struck-through words stay struck.
 - Forms alternate. Do not use the form used by the previous entry.
 - Typography: DejaVu Sans, sentence case labels 'a / cut edge', a heading
-  'XVII / TITLE IN CAPS', small sublines, ruled ledger paper or textured frames.
+  'IV / TITLE IN CAPS', small sublines, ruled register paper or textured frames.
   Textures are short random line segments, never gradients.
 - The drawing is the document; text is subordinate to it. Labels are 12-14 px,
   annotations 13-14 px, the verdict at most 18 px, the struck word at most 16 px.
   Nothing else is large except the heading. No boxes or highlights behind text
-  outside a terminal Panel.
+  outside a monospace Panel.
 - Every document counts something. It carries real quantities with units, scales,
   numbered stations, sections a/ b/ c/, weights, degrees, dates, folios: the
   accounting is where the story hides. A bar or a column that measures nothing is
@@ -50,15 +51,16 @@ the only continuity the series has. Rules the series has kept so far:
   it explains the metaphor, and the metaphor is never explained. Keep each note
   to four words or fewer and place it on the thing it comments on.
 - Never repeat a line. The verdict appears once; each second-hand note once.
-- Never write the words love, grace, kindness, gratitude, heart, or forgiveness.
+- Never write the words death, dead, dying, grief, mourning, art, beauty, soul, or eternal.
+  The dead are rows with names and dates; the wall is plaster and pigment by the ell.
 """.strip()
 
 FORMS = {
-    "terminal_ledger": "black paper, one large monospace Panel with three columns, hatched bars, a highlighted verdict, a cobalt margin column",
-    "route_diagram": "black or vellum paper, nested boxes with a flowchart header (a ► b ► c), a legend block, dotted fields, one diagonal line leaving the frame",
-    "plan_view": "vellum paper, nested textured frames (c.frame) around a receiving surface holding many textured blobs, section labels a/ b/ c/, a scale bar",
-    "botanical_plate": "vellum paper with faint ruled lines, a thick textured band crossing the page, many large textured blobs on stems, one enlarged detail, struck word bottom-left, verdict bottom-right",
-    "map_sheet": "vellum, a coastline or route drawn as a textured band, hatched land, a compass rose, numbered stations, cobalt bearings",
+    "assessment_matrix": "soot paper, one large monospace Panel laid out as a matrix: column headers are holdings, row labels are names with dates, entries are numbers or hatched bars with values, one struck row, the determinant highlighted in gold_leaf, a verdigris margin column",
+    "giornate_wall": "plaster paper, the fresco wall divided into numbered day-patches (giornate) with textured joins, sinopia underdrawing showing through where plaster was cut back, one patch left bare, a scale in ells",
+    "probate_inventory": "plaster paper with faint ruled lines, an itemised list with weights and valuations, a small textured object drawn beside each entry, a balance drawn once, struck word bottom-left, verdict bottom-right",
+    "effigy_section": "plaster paper, plan and section of a tomb effigy or vessel inside nested textured frames (c.frame), section labels a/ b/ c/, dimensions, a scale bar",
+    "tread_route": "soot or plaster paper, the dawn tread across the estate as a route with numbered paces and stations, a flowchart header (a ► b ► c), a legend block, dotted fields, one diagonal line leaving the frame",
 }
 
 
@@ -114,7 +116,7 @@ Return ONLY JSON:
  "introduce": ["one new object or word the series will have to carry from now on"],
  "struck": "one word or phrase to draw struck-through, or null",
  "verdict": "the first voice's line for the bottom-right, ≤ 5 words",
- "second_hand": ["2-4 short cobalt annotations, ≤ 4 words each"],
+ "second_hand": ["2-4 short verdigris annotations, ≤ 4 words each"],
  "story_beat": "one sentence, for memory only: what happens in the story here"
 }}"""
     r = client.messages.create(model=MODEL, max_tokens=8000, messages=[{"role": "user", "content": prompt}])
@@ -128,9 +130,9 @@ def render(code: str, plan_: dict, out_png: Path, seed: int) -> None:
     exec(compile(code, "<draw>", "exec"), ns)
     if "draw" not in ns:
         raise RuntimeError("code must define draw(c, P)")
-    paper = "black" if plan_.get("form") in ("terminal_ledger",) else "vellum"
-    if plan_.get("form") == "route_diagram" and plan_.get("paper") == "black":
-        paper = "black"
+    paper = "soot" if plan_.get("form") == "assessment_matrix" else "plaster"
+    if plan_.get("form") == "tread_route" and plan_.get("paper") in ("soot", "black"):
+        paper = "soot"
     c = canvaslib.Canvas(1440, paper=plan_.get("paper", paper), seed=seed)
     ns["draw"](c, plan_)
     c.save(out_png)

@@ -4,7 +4,8 @@
 draws from it, and writes back into it. To start your own series you replace the seed; the machinery
 stays. This file says what each field is for, what the code does with it, and how to write it.
 
-Reset the world with a fresh file (keep the shape below), delete or archive `out/`, set
+Reset the world with a fresh file (keep the shape below), archive `out/` (the first series lives
+in `seeds/observed-series/`, memory and images together), set
 `series_number` to 0, and run. Roman numerals come from `series_number + 1`.
 
 ## Shape

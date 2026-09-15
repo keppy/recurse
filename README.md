@@ -33,7 +33,8 @@ See [SEEDING.md](SEEDING.md): what each field of `memory.json` is for, what the 
 
 - `memory.json` — the store. Motifs with states (open / carried / resolved), open
   lines the next entry owes an answer to, trades used, one record per entry.
-  Seeded from the four observed posts (PROMOTION LEDGER, COURSE OF READING, XIV, XVI).
+  Currently seeded with the house of Dawntreading (see below). The first series it ran,
+  seeded from four observed posts, is archived in `seeds/observed-series/`.
 - `lib/canvas.py` — Pillow drawing library: vellum/black paper, ruled ledger lines,
   short-segment hatch clipped to polygons, blobs, textured bands and frames,
   struck text, cobalt annotations, a monospace `Panel` for the terminal-ledger form.
@@ -43,10 +44,20 @@ See [SEEDING.md](SEEDING.md): what each field of `memory.json` is for, what the 
   step sees the PNG, so continuity is over images, not intentions.
 - `fixtures/` — a hand-written stand-in cycle (XVII, a survey sheet) for `--offline`.
 
+## The current series
+
+The Assessor, a matrix, comes to the noble house of Dawntreading to keep its accounts:
+every holding a column, every death a row, whatever it cannot weigh has rank zero. The
+house paints its frescoed wall one day-patch per death and goes on. The determinant is
+zero; SINGULAR is struck. The two hands are bistre and verdigris.
+
 ## Decisions
 
 - Forms alternate; the previous entry's form is excluded.
 - Every entry must draw its carried motifs first, small and labelled.
-- Struck words stay struck. Banned words: love, grace, kindness, gratitude, heart, forgiveness.
+- Struck words stay struck. Banned words: death, dead, dying, grief, mourning, art, beauty, soul, eternal.
+- Every document counts something; the second hand names and never interprets.
+- The draw step sees the previous entry's PNG and code; continuity is over images.
 - The model names its palette in the subline and the caption comes from looking at the result.
-- Posting is not wired. Outputs are files; add your own publisher.
+- `--offline` still renders the first series' fixture (old palette names resolve through
+  `canvas.LEGACY`); point it at scratch copies so it does not write into the new memory.
