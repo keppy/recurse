@@ -1,6 +1,6 @@
 {
  "series_number": 0,
- "story": "The Assessor came to the house of Dawntreading with a matrix: every holding a column, every death a row, and a rule that whatever it could not weigh had rank zero. It entered the frescoed wall as plaster, so many square ells, norm 0. The house buried its third daughter at first light and went on painting the wall in giornate, one day-patch per death, sinopia showing where the plaster was cut back. The determinant came out zero. The Assessor wrote SINGULAR in the margin and demanded a different basis; the house's hand struck it and wrote: it is not a basis. it is a wall. Beneath the wall a spiral stair goes down, dim, and the faces of earlier hands show through the plaster where it thins. There was a picnic at the rock. The Assessor's survey calls it Castle Rock; those who went call it Hanging Rock, and not all of them came down; the house calls it the rock of once and future means, where the mean is taken and the next head of the house is decided. We left.",
+ "story": "The Assessor came to the house of Dawntreading with a matrix: every holding a column, every death a row; whatever it could not weigh had rank zero. It entered the frescoed wall as plaster by the ell, norm 0. The house buried its third daughter at first light and went on painting the wall in giornate, one day-patch per death, sinopia showing where plaster was cut back. The determinant came out zero. The Assessor wrote SINGULAR; the house's hand struck it: it is not a basis. it is a wall. Beneath the wall a spiral stair goes down, dim, faces of earlier hands showing through the plaster. The house moves its rocks on spiral spindles. There was a picnic at the rock, which the survey calls Castle Rock, the picnickers Hanging Rock, and the house the rock of once and future means, where the mean is taken and succession decided. We played the cardamom game on the cloth and it consumed us. Not all came down. We left.",
  "voices": {
   "first": "the Assessor: a matrix that keeps the house's accounts; every holding a column, every death a row; weighs vectors on a balance and records the norm and the mean; ranks (rank 1, rank 2), permits nothing of rank zero, writes maxims in caps (RANK IS DESTINY, EVERY VECTOR HAS A NORM, THE KERNEL IS EMPTY); bistre on plaster, or gold_leaf on soot",
   "second": "the house's hand: verdigris, terse, plain, a little proud; corrects the Assessor in the margin ('it is a wall.', 'weighed? no. painted.', 'row 3 is a person.', 'a wart, not a value.'), strikes words through, asks what the matrix sends to zero"
@@ -62,7 +62,7 @@
   },
   {
    "name": "the spiral stair",
-   "note": "goes down beneath the wall; dim; each turn shows a face from an earlier layer of plaster; the Assessor has no column for it",
+   "note": "goes down beneath the wall; dim; each turn shows a face from an earlier layer of plaster; the stair is itself a spindle; the Assessor has no column for it",
    "state": "open",
    "seen_in": []
   },
@@ -77,10 +77,22 @@
    "note": "one outcrop at the end of the tread, named three ways: Castle Rock on the Assessor's survey (a station, a height in ells); Hanging Rock by those who picnicked there (a cloth, 4 plates, fewer came down than went up); the rock of once and future means by the house (where the mean is taken and succession is decided). Each hand uses its own name; the names are never reconciled",
    "state": "open",
    "seen_in": []
+  },
+  {
+   "name": "spiral spindles",
+   "note": "the threaded posts the house turns to move its rocks; a rock rises one thread per turn; turns are counted (the house's unit), height is measured (the Assessor's); the stair is one of them",
+   "state": "open",
+   "seen_in": []
+  },
+  {
+   "name": "the cardamom game",
+   "note": "played on the picnic cloth with green pods as counters; a captured pod is split and its seeds eaten, about 14 seeds to a pod, 0.1 g; the Assessor enters pods by count and weight; the house counts turns; it consumed us",
+   "state": "open",
+   "seen_in": []
   }
  ],
  "open_lines": [
-  "the rock has three names.",
+  "the game consumed us.",
   "row 3 is a person.",
   "we left."
  ],
