@@ -1,6 +1,6 @@
 {
  "series_number": 0,
- "story": "The Assessor came to the house of Dawntreading with a matrix: every holding a column, every death a row, and a rule that whatever it could not weigh had rank zero. It entered the frescoed wall as plaster, so many square ells, norm 0. The house buried its third daughter at first light and went on painting the wall in giornate, one day-patch per death, sinopia showing where the plaster was cut back. The determinant came out zero. The Assessor wrote SINGULAR in the margin and demanded a different basis; the house's hand struck it and wrote: it is not a basis. it is a wall.",
+ "story": "The Assessor came to the house of Dawntreading with a matrix: every holding a column, every death a row, and a rule that whatever it could not weigh had rank zero. It entered the frescoed wall as plaster, so many square ells, norm 0. The house buried its third daughter at first light and went on painting the wall in giornate, one day-patch per death, sinopia showing where the plaster was cut back. The determinant came out zero. The Assessor wrote SINGULAR in the margin and demanded a different basis; the house's hand struck it and wrote: it is not a basis. it is a wall. Beneath the wall a spiral stair goes down, dim, and the faces of earlier hands show through the plaster where it thins. There was a picnic at Castle Rock. We left.",
  "voices": {
   "first": "the Assessor: a matrix that keeps the house's accounts; every holding a column, every death a row; weighs vectors on a balance and records the norm; ranks (rank 1, rank 2), permits nothing of rank zero, writes maxims in caps (RANK IS DESTINY, EVERY VECTOR HAS A NORM, THE KERNEL IS EMPTY); bistre on plaster, or gold_leaf on soot",
   "second": "the house's hand: verdigris, terse, plain, a little proud; corrects the Assessor in the margin ('it is a wall.', 'weighed? no. painted.', 'row 3 is a person.', 'a wart, not a value.'), strikes words through, asks what the matrix sends to zero"
@@ -59,12 +59,30 @@
    "note": "the only holding the matrix could weigh: 1 square of gold leaf, 0.03 g, rank 1; listed above the wall",
    "state": "open",
    "seen_in": []
+  },
+  {
+   "name": "the spiral stair",
+   "note": "goes down beneath the wall; dim; each turn shows a face from an earlier layer of plaster; the Assessor has no column for it",
+   "state": "open",
+   "seen_in": []
+  },
+  {
+   "name": "faces in the plaster",
+   "note": "earlier hands showing through where the intonaco thins: the house's past selves, kept as rows the matrix cannot zero",
+   "state": "open",
+   "seen_in": []
+  },
+  {
+   "name": "Castle Rock",
+   "note": "the outcrop at the end of the tread where the house ate on the grass before it left; a station, a cloth, 4 plates",
+   "state": "open",
+   "seen_in": []
   }
  ],
  "open_lines": [
   "what does it send to zero?",
   "row 3 is a person.",
-  "singular. cut the plaster back."
+  "we left."
  ],
  "vocabulary": [],
  "entries": []
